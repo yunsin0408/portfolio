@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal portfolio showcasing my skills and projects." />
+  <title>Yunsin | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">Yunsin</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-greeting">Hi there, I'm</p>
+      <h1 class="hero-name">Yunsin</h1>
+      <p class="hero-title"><!-- UPDATE: Your role/title -->
+        Full-Stack Developer &amp; Creative Problem Solver
+      </p>
+      <p class="hero-description">
+        <!-- UPDATE: Short pitch about yourself -->
+        I build clean, efficient, and user-friendly applications.
+        Passionate about turning ideas into reality through code.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-blob"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            <!-- UPDATE: Your personal bio -->
+            Hello! I'm Yunsin, a passionate developer with a love for creating
+            elegant solutions to complex problems. I enjoy working across the
+            full stack and am always eager to learn new technologies.
+          </p>
+          <p>
+            <!-- UPDATE: More details about you -->
+            When I'm not coding, you can find me exploring new ideas, keeping up
+            with the latest tech trends, and continuously improving my craft.
+          </p>
+          <ul class="about-highlights">
+            <!-- UPDATE: Add/remove highlight items -->
+            <li>🎓 Computer Science background</li>
+            <li>💼 Open to opportunities</li>
+            <li>🌏 Based in Taiwan</li>
+            <li>🚀 Always learning</li>
+          </ul>
+          <a href="#" class="btn btn-primary" id="resume-btn">
+            <!-- UPDATE: Link to your resume PDF -->
+            Download Resume
+          </a>
+        </div>
+        <div class="about-stats">
+          <!-- UPDATE: Your actual stats -->
+          <div class="stat-card">
+            <span class="stat-number">2+</span>
+            <span class="stat-label">Years of Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Passion for Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills &amp; Technologies</h2>
+      <p class="section-subtitle">Technologies I've been working with recently</p>
+
+      <!-- UPDATE: Add/remove skill categories and individual skills -->
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">TypeScript</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Express</span>
+            <span class="skill-tag">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Database</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Tools &amp; Others</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">VS Code</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">A selection of things I've built</p>
+
+      <!-- UPDATE: Add/remove project cards as needed -->
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon">🗂️</span>
+            <div class="project-links">
+              <!-- UPDATE: Set href to your GitHub repo -->
+              <a href="#" class="project-link" aria-label="View source code" target="_blank" rel="noopener noreferrer">
+                &lt;/&gt; Code
+              </a>
+              <!-- UPDATE: Set href to live demo URL, remove if no demo -->
+              <a href="#" class="project-link project-link-demo" aria-label="View live demo" target="_blank" rel="noopener noreferrer">
+                ↗ Demo
+              </a>
+            </div>
+          </div>
+          <!-- UPDATE: Project title -->
+          <h3 class="project-title">Project One</h3>
+          <!-- UPDATE: Project description -->
+          <p class="project-description">
+            A brief description of what this project does, the problem it
+            solves, and the impact it has. Keep it concise and compelling.
+          </p>
+          <!-- UPDATE: Technologies used -->
+          <div class="project-tech">
+            <span>React</span>
+            <span>Node.js</span>
+            <span>MongoDB</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon">⚙️</span>
+            <div class="project-links">
+              <a href="#" class="project-link" aria-label="View source code" target="_blank" rel="noopener noreferrer">
+                &lt;/&gt; Code
+              </a>
+              <a href="#" class="project-link project-link-demo" aria-label="View live demo" target="_blank" rel="noopener noreferrer">
+                ↗ Demo
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Project Two</h3>
+          <p class="project-description">
+            A brief description of what this project does, the problem it
+            solves, and the impact it has. Keep it concise and compelling.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>PostgreSQL</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon">🌐</span>
+            <div class="project-links">
+              <a href="#" class="project-link" aria-label="View source code" target="_blank" rel="noopener noreferrer">
+                &lt;/&gt; Code
+              </a>
+              <a href="#" class="project-link project-link-demo" aria-label="View live demo" target="_blank" rel="noopener noreferrer">
+                ↗ Demo
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Project Three</h3>
+          <p class="project-description">
+            A brief description of what this project does, the problem it
+            solves, and the impact it has. Keep it concise and compelling.
+          </p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">
+        Have a project in mind or just want to say hi? Feel free to reach out!
+      </p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <!-- UPDATE: Your email -->
+              <a href="mailto:your.email@example.com">your.email@example.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">💼</span>
+            <div>
+              <strong>LinkedIn</strong>
+              <!-- UPDATE: Your LinkedIn URL -->
+              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🐙</span>
+            <div>
+              <strong>GitHub</strong>
+              <!-- UPDATE: Your GitHub URL -->
+              <a href="https://github.com/yunsin0408" target="_blank" rel="noopener noreferrer">github.com/yunsin0408</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          <p class="form-note" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <!-- UPDATE: Your name -->
+        Designed &amp; built by <strong>Yunsin</strong> · 2024
+      </p>
+      <p class="footer-note">Built with HTML, CSS &amp; JavaScript — open to updates anytime.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
