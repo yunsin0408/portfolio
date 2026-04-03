@@ -27,8 +27,6 @@ watchEffect(() => {
   document.body.classList.toggle("light", isLight.value);
 });
 
-const paperTexture = imageUrl("paper-texture.jpg");
-
 function runRevealAnimation() {
   const revealItems = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver(
@@ -106,7 +104,7 @@ onMounted(() => {
       @toggle-nav="toggleNav"
       @close-nav="closeNav"
     />
-        <div class="min-h-screen w-full bg-cream-paper relative overflow-x-hidden" :style="{ backgroundImage: `url(${paperTexture})`, backgroundSize: 'cover' }">
+        <div class="min-h-screen w-full bg-cream-paper relative overflow-x-hidden">
           <div class="global-citrus-layer pointer-events-none absolute inset-0 z-0" aria-hidden="true">
             <img :src="imageUrl('Citrus Club 04/PNG/HTC_Heritage Library_Citrus Club 04Element 1.png')" alt="" class="global-citrus global-citrus-1" />
             <img :src="imageUrl('Citrus Club 04/PNG/HTC_Heritage Library_Citrus Club 04Element 3.png')" alt="" class="global-citrus global-citrus-2" />

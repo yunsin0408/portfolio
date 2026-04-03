@@ -6,12 +6,18 @@ import DateTape from '../components/DateTape.vue';
 
 // Flippable Polaroid Stack State
 const stack = ref([...aboutData.photos]);
+const isFlipping = ref(false);
+const FLIP_DURATION_MS = 850;
 
 const flipNext = () => {
-  if (stack.value.length < 2) return;
+  if (stack.value.length < 2 || isFlipping.value) return;
+  isFlipping.value = true;
   // Shift top photo out and push it to the back of the queue
   const top = stack.value.shift();
   stack.value.push(top);
+  setTimeout(() => {
+    isFlipping.value = false;
+  }, FLIP_DURATION_MS);
 };
 </script>
 
@@ -43,7 +49,7 @@ const flipNext = () => {
         </div>
 
         <!-- Horizontal Polaroid Component  -->
-        <div class="relative w-full max-w-130 aspect-5/4 sm:aspect-4/3 lg:aspect-5/4 shrink-0 mt-8 lg:mt-0" @click="flipNext" role="button">
+        <div class="relative w-full max-w-130 aspect-5/4 sm:aspect-4/3 lg:aspect-5/4 shrink-0 mt-8 lg:mt-0" @click="flipNext" role="button" :class="isFlipping ? 'pointer-events-none' : 'pointer-events-auto'">
           <!-- indication text  -->
           <span class="absolute -top-10 right-4 font-caveat text-lg sm:text-xl text-yellow-900 font-bold rotate-7">Flip through! ⤵</span>
           
@@ -51,7 +57,7 @@ const flipNext = () => {
             <div 
               v-for="(photo, index) in stack" 
               :key="photo.id"
-              class="absolute inset-0 bg-[#FDFBF7] p-2.5 sm:p-3.5 pb-8 sm:pb-12 lg:pb-14 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.1)] border border-stone-200 transform transition-all duration-700 flex flex-col items-center justify-start cursor-pointer origin-bottom-right"
+              class="absolute inset-0 bg-[#FDFBF7] p-2.5 sm:p-3.5 pb-8 sm:pb-12 lg:pb-14 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.1)] border border-stone-200 transform transition-all duration-[850ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] will-change-transform flex flex-col items-center justify-start cursor-pointer origin-bottom-right"
               :class="index === 0 ? '-rotate-1 z-30 opacity-100 scale-100' : (index === 1 ? 'rotate-6 z-20 scale-[0.98] opacity-90 translate-x-3 translate-y-2' : '-rotate-2 scale-[0.95] opacity-60 translate-x-6 translate-y-4')"
             >
               <!-- Photo Image Inner Border -->
@@ -144,7 +150,7 @@ const flipNext = () => {
                   <img :src="item.logoSrc" :alt="`${item.company} logo`" class="w-full h-full object-contain p-1" />
                 </div>
                 <WashiTape position="left" rotation="-rotate-4" class="absolute -top-2 -left-4 z-20 mix-blend-multiply filter opacity-150 sepia-[0.2] hue-rotate-110" width="80px" />
-                <div class="pl-10 relative z-10">
+                <div class="pl-10 relative z-10" :class="item.company === 'Acer' ? 'pt-4' : ''">
                   <h3 class="font-caveat text-2xl sm:text-3xl text-stone-600 font-bold mb-1 w-4/5">{{ item.role }}</h3>
                   <h4 class="font-sans text-[11px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">{{ item.company }}</h4>
                   <p v-if="item.description" class="font-sans text-stone-500 font-medium leading-snug text-xs sm:text-sm w-11/12">{{ item.description }}</p>
