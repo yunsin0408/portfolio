@@ -7,6 +7,7 @@ import NowPlayingGallery from "../components/NowPlayingGallery.vue";
 import PaperClip from "../components/PaperClip.vue";
 import CDInlayOverlay from "../components/CDInlayOverlay.vue";
 import { projectsData } from "../data/projects";
+import { imageUrl } from "../utils/imageUrl";
 
 const projects = Object.values(projectsData);
 
@@ -58,12 +59,12 @@ const publications = [
       <!-- Profile Picture  -->
       <div class="relative z-20 w-[min(86vw,22rem)] md:w-[min(36vw,25rem)] origin-bottom transform rotate-3 shrink-0 bg-white p-4 shadow-note hover:-rotate-1 transition duration-500 rounded-sm">
         <img
-          src="/assets/images/lemon_hk.png"
+          :src="imageUrl('lemon_hk.png')"
           alt=""
           class="pointer-events-none select-none absolute -top-13 -right-12 w-25 md:w-32 rotate-10 drop-shadow-md"
         />
         <WashiTape position="top" rotation="-rotate-3" width="120px" />
-        <img src="/assets/images/me.jpeg" alt="Cindy snapshot" class="w-full aspect-5/4 object-cover object-[center_80%] border border-gray-100 bg-gray-50" />
+        <img :src="imageUrl('me.jpeg')" alt="Cindy snapshot" class="w-full aspect-5/4 object-cover object-[center_80%] border border-gray-100 bg-gray-50" />
         <p class="font-handwritten text-center text-sunset-pink text-2xl mt-4 font-bold">That's me!</p>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { useRoute } from "vue-router";
 import SiteHeader from "./components/SiteHeader.vue";
 import SiteFooter from "./components/SiteFooter.vue";
 import './assets/tailwind.css';
+import { imageUrl } from "./utils/imageUrl";
 
 const route = useRoute();
 const isLight = ref(localStorage.getItem("portfolio-theme") === "light");
@@ -25,6 +26,8 @@ function closeNav() {
 watchEffect(() => {
   document.body.classList.toggle("light", isLight.value);
 });
+
+const paperTexture = imageUrl("paper-texture.jpg");
 
 function runRevealAnimation() {
   const revealItems = document.querySelectorAll(".reveal");
@@ -103,15 +106,15 @@ onMounted(() => {
       @toggle-nav="toggleNav"
       @close-nav="closeNav"
     />
-        <div class="min-h-screen w-full bg-cream-paper relative overflow-x-hidden" style="background-image: url('/assets/paper-texture.png'); background-size: cover;">
+        <div class="min-h-screen w-full bg-cream-paper relative overflow-x-hidden" :style="{ backgroundImage: `url(${paperTexture})`, backgroundSize: 'cover' }">
           <div class="global-citrus-layer pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-            <img src="/assets/images/Citrus%20Club%2004/PNG/HTC_Heritage%20Library_Citrus%20Club%2004Element%201.png" alt="" class="global-citrus global-citrus-1" />
-            <img src="/assets/images/Citrus%20Club%2004/PNG/HTC_Heritage%20Library_Citrus%20Club%2004Element%203.png" alt="" class="global-citrus global-citrus-2" />
-            <img src="/assets/images/Citrus%20Club%2004/PNG/HTC_Heritage%20Library_Citrus%20Club%2004Element%205.png" alt="" class="global-citrus global-citrus-3" />
-            <img src="/assets/images/Citrus%20Club%2004/PNG/HTC_Heritage%20Library_Citrus%20Club%2004Element%207.png" alt="" class="global-citrus global-citrus-4" />
-            <img src="/assets/images/Citrus%20Club%2004/PNG/HTC_Heritage%20Library_Citrus%20Club%2004Element%208.png" alt="" class="global-citrus global-citrus-5" />
-            <img src="/assets/images/Citrus%20Club%2004/PNG/HTC_Heritage%20Library_Citrus%20Club%2004Element%202.png" alt="" class="global-citrus global-citrus-6" />
-            <img src="/assets/images/Citrus%20Club%2004/PNG/HTC_Heritage%20Library_Citrus%20Club%2004Element%206.png" alt="" class="global-citrus global-citrus-7" />
+            <img :src="imageUrl('Citrus Club 04/PNG/HTC_Heritage Library_Citrus Club 04Element 1.png')" alt="" class="global-citrus global-citrus-1" />
+            <img :src="imageUrl('Citrus Club 04/PNG/HTC_Heritage Library_Citrus Club 04Element 3.png')" alt="" class="global-citrus global-citrus-2" />
+            <img :src="imageUrl('Citrus Club 04/PNG/HTC_Heritage Library_Citrus Club 04Element 5.png')" alt="" class="global-citrus global-citrus-3" />
+            <img :src="imageUrl('Citrus Club 04/PNG/HTC_Heritage Library_Citrus Club 04Element 7.png')" alt="" class="global-citrus global-citrus-4" />
+            <img :src="imageUrl('Citrus Club 04/PNG/HTC_Heritage Library_Citrus Club 04Element 8.png')" alt="" class="global-citrus global-citrus-5" />
+            <img :src="imageUrl('Citrus Club 04/PNG/HTC_Heritage Library_Citrus Club 04Element 2.png')" alt="" class="global-citrus global-citrus-6" />
+            <img :src="imageUrl('Citrus Club 04/PNG/HTC_Heritage Library_Citrus Club 04Element 6.png')" alt="" class="global-citrus global-citrus-7" />
           </div>
           <main class="relative z-10 pt-8 pb-24 px-4">
             <router-view />

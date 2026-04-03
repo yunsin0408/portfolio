@@ -1,3 +1,5 @@
+import { imageUrl } from "../utils/imageUrl";
+
 export const projectsData = {
   mealmind: {
     slug: "mealmind",
@@ -7,8 +9,8 @@ export const projectsData = {
     playlistLabel: "AI",
     releaseYear: 2026,
     status: "Ongoing",
-    coverImage: "assets/images/cd covers/mealmind_cd.png",
-    image: "/assets/images/mealmind_cover.png",
+    coverImage: imageUrl("cd covers/mealmind_cd.png"),
+    image: imageUrl("mealmind_cover.png"),
     // HomeView layout styling
     rotation: "rotate-3",
     zIndex: 20,
@@ -46,8 +48,8 @@ export const projectsData = {
     playlistLabel: "Tech",
     releaseYear: 2025,
     status: "Completed",
-    coverImage: "assets/images/cd covers/isoogle_cd.png",
-    image: "/assets/images/ISOOOGLE_cover.png",
+    coverImage: imageUrl("cd covers/isoogle_cd.png"),
+    image: imageUrl("ISOOOGLE_cover.png"),
     // HomeView
     rotation: "-rotate-2",
     zIndex: 10,
@@ -107,8 +109,8 @@ export const projectsData = {
     playlistLabel: "Data Analytics",
     releaseYear: 2025,
     status: "Completed",
-    coverImage: "assets/images/cd covers/airline_cd.png",
-    image: "/assets/images/da_cover.png",
+    coverImage: imageUrl("cd covers/airline_cd.png"),
+    image: imageUrl("da_cover.png"),
     // HomeView
     rotation: "rotate-1",
     zIndex: 30,
@@ -150,7 +152,7 @@ export const projectsData = {
     playlistLabel: "ML",
     releaseYear: 2024,
     status: "Completed",
-    coverImage: "assets/images/cd covers/identifier_cd.png",
+    coverImage: imageUrl("cd covers/identifier_cd.png"),
     image: "", // Placeholder image
     rotation: "-rotate-4",
     zIndex: 5,

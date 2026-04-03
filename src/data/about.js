@@ -1,5 +1,4 @@
-import deloitteLogo from "../../assets/images/deloitte-logo.png";
-import acerLogo from "../../assets/images/acer-logo.png";
+import { imageUrl } from "../utils/imageUrl";
 
 export const aboutData = {
   profile: {
@@ -8,9 +7,9 @@ export const aboutData = {
     bio: "I love transforming innovative ideas into reality. I’ve dedicated my studies to interdisciplinary learning, aiming to integrate technology and social science to address challenges from a human-centered perspective in our rapidly evolving society ✨ 🌎 🌱"
   },
   photos: [
-    { id: 1, src: "assets/images/Innofest2.JPG", caption: "Innofest Demo 2025" },
-    { id: 2, src: "assets/images/Innofest1.JPG", caption: "Innofest  Exhibition 2025" },
-    { id: 3, src: "assets/images/da_final.jpeg", caption: "NCCU DA 5.0 Final Presentation" }
+    { id: 1, src: imageUrl("Innofest2.JPG"), caption: "Innofest Demo 2025" },
+    { id: 2, src: imageUrl("Innofest1.JPG"), caption: "Innofest  Exhibition 2025" },
+    { id: 3, src: imageUrl("da_final.jpeg"), caption: "NCCU DA 5.0 Final Presentation" }
   ],
   roadmap: [
     {
@@ -22,7 +21,7 @@ export const aboutData = {
       description: "Designing and prototyping a multi-cloud AI governance and risk assessment framework across Azure, AWS and GCP.",
       icon: "grad-cap",
       rotation: "rotate-2",
-      logoSrc: deloitteLogo
+      logoSrc: imageUrl("deloitte-logo.png")
     },
     {
       id: 2,
@@ -43,7 +42,7 @@ export const aboutData = {
       description: "Developed a department-wide AI agent that reduced internal FAQ response times from 24+ hours to under 3 seconds using Power Automate.",
       icon: "server",
       rotation: "rotate-1",
-      logoSrc: acerLogo
+      logoSrc: imageUrl("acer-logo.png")
     }
   ]
 };
