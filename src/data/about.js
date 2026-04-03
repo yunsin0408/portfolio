@@ -1,3 +1,6 @@
+import deloitteLogo from "../../assets/images/deloitte-logo.png";
+import acerLogo from "../../assets/images/acer-logo.png";
+
 export const aboutData = {
   profile: {
     name: "Cindy Hung",
@@ -19,7 +22,7 @@ export const aboutData = {
       description: "Designing and prototyping a multi-cloud AI governance and risk assessment framework across Azure, AWS and GCP.",
       icon: "grad-cap",
       rotation: "rotate-2",
-      logoSrc: "/assets/images/deloitte-logo.png"
+      logoSrc: deloitteLogo
     },
     {
       id: 2,
@@ -40,7 +43,7 @@ export const aboutData = {
       description: "Developed a department-wide AI agent that reduced internal FAQ response times from 24+ hours to under 3 seconds using Power Automate.",
       icon: "server",
       rotation: "rotate-1",
-      logoSrc: "/assets/images/acer-logo.png"
+      logoSrc: acerLogo
     }
   ]
 };
