@@ -1,145 +1,4 @@
-:root {
-  --bg: #0f2742;
-  --surface: rgba(20, 43, 74, 0.58);
-  --surface-alt: rgba(34, 66, 107, 0.55);
-  --card-solid: #1f456f;
-  --text: #eaf6ff;
-  --text-muted: #b7d3ea;
-  --primary: #ffcb7d;
-  --primary-strong: #ffb55d;
-  --primary-text: #603900;
-  --border: rgba(122, 167, 205, 0.42);
-  --shadow-soft: 0 12px 24px rgba(7, 16, 30, 0.32);
-}
 
-body.light {
-  --bg: #ecf8ff;
-  --surface: rgba(255, 255, 255, 0.78);
-  --surface-alt: rgba(233, 247, 255, 0.86);
-  --card-solid: #f7fcff;
-  --text: #0d3f5d;
-  --text-muted: #4a7c9d;
-  --primary: #e8a348;
-  --primary-strong: #d98d33;
-  --primary-text: #5f3600;
-  --border: rgba(147, 201, 228, 0.35);
-  --shadow-soft: 0 10px 20px rgba(96, 165, 201, 0.14);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background:
-    radial-gradient(circle at 14% 15%, rgba(255, 235, 175, 0.16), transparent 30%),
-    radial-gradient(circle at 80% 12%, rgba(177, 208, 255, 0.14), transparent 34%),
-    radial-gradient(0.95px 0.95px at 7% 12%, rgba(255, 255, 255, 0.88), transparent 100%),
-    radial-gradient(0.85px 0.85px at 12% 22%, rgba(211, 235, 255, 0.75), transparent 100%),
-    radial-gradient(0.9px 0.9px at 16% 7%, rgba(255, 247, 220, 0.76), transparent 100%),
-    radial-gradient(0.95px 0.95px at 21% 19%, rgba(255, 255, 255, 0.84), transparent 100%),
-    radial-gradient(0.8px 0.8px at 26% 13%, rgba(207, 232, 255, 0.72), transparent 100%),
-    radial-gradient(0.95px 0.95px at 31% 24%, rgba(255, 255, 255, 0.84), transparent 100%),
-    radial-gradient(0.85px 0.85px at 36% 9%, rgba(255, 244, 210, 0.74), transparent 100%),
-    radial-gradient(0.9px 0.9px at 41% 18%, rgba(255, 255, 255, 0.8), transparent 100%),
-    radial-gradient(0.8px 0.8px at 47% 8%, rgba(205, 232, 255, 0.7), transparent 100%),
-    radial-gradient(0.95px 0.95px at 52% 21%, rgba(255, 255, 255, 0.82), transparent 100%),
-    radial-gradient(0.85px 0.85px at 58% 11%, rgba(255, 244, 214, 0.74), transparent 100%),
-    radial-gradient(0.9px 0.9px at 63% 25%, rgba(255, 255, 255, 0.82), transparent 100%),
-    radial-gradient(0.8px 0.8px at 68% 7%, rgba(204, 231, 255, 0.7), transparent 100%),
-    radial-gradient(0.95px 0.95px at 73% 17%, rgba(255, 255, 255, 0.82), transparent 100%),
-    radial-gradient(0.85px 0.85px at 78% 10%, rgba(255, 245, 214, 0.74), transparent 100%),
-    radial-gradient(0.9px 0.9px at 83% 23%, rgba(255, 255, 255, 0.8), transparent 100%),
-    radial-gradient(0.8px 0.8px at 88% 12%, rgba(205, 232, 255, 0.72), transparent 100%),
-    radial-gradient(0.95px 0.95px at 94% 20%, rgba(255, 255, 255, 0.84), transparent 100%),
-    linear-gradient(180deg, #142f52 0%, #1a3e69 40%, #20527e 58%, #2f6d96 80%, #36769f 100%);
-  color: var(--text);
-  line-height: 1.6;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-  transition: background 350ms ease, color 250ms ease;
-}
-
-body.light {
-  background:
-    radial-gradient(circle at 20% 14%, rgba(255, 232, 176, 0.72), transparent 34%),
-    radial-gradient(circle at 78% 12%, rgba(242, 251, 255, 0.7), transparent 34%),
-    linear-gradient(180deg, #c6e9ff 0%, #eaf8ff 42%, #9fcee8 59%, #74b5da 76%, #5a9fc5 100%);
-}
-
-body:not(.light)::selection {
-  background: rgba(255, 214, 130, 0.35);
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  left: -10vw;
-  right: -10vw;
-  z-index: -1;
-  animation: dreamyFloat 16s ease-in-out infinite;
-}
-
-body::before {
-  top: 58%;
-  height: 15vh;
-  border-radius: 55% 45% 0 0;
-  background: linear-gradient(180deg, rgba(220, 244, 255, 0.45), rgba(130, 195, 229, 0.3));
-  filter: blur(1px);
-}
-
-body::after {
-  top: 68%;
-  height: 19vh;
-  border-radius: 62% 38% 0 0;
-  background: linear-gradient(180deg, rgba(93, 164, 205, 0.48), rgba(55, 121, 162, 0.5));
-  filter: blur(2px);
-  animation-delay: 2s;
-}
-
-body:not(.light) main::before,
-body:not(.light) main::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-body:not(.light) main::before {
-  background-image:
-    radial-gradient(0.7px 0.7px at 8% 14%, rgba(255, 255, 255, 0.72), transparent 100%),
-    radial-gradient(0.9px 0.9px at 18% 8%, rgba(255, 245, 205, 0.68), transparent 100%),
-    radial-gradient(0.7px 0.7px at 29% 22%, rgba(255, 255, 255, 0.64), transparent 100%),
-    radial-gradient(0.8px 0.8px at 39% 11%, rgba(202, 233, 255, 0.66), transparent 100%),
-    radial-gradient(0.6px 0.6px at 51% 19%, rgba(255, 255, 255, 0.56), transparent 100%),
-    radial-gradient(0.9px 0.9px at 62% 9%, rgba(255, 242, 203, 0.62), transparent 100%),
-    radial-gradient(0.7px 0.7px at 73% 18%, rgba(255, 255, 255, 0.64), transparent 100%),
-    radial-gradient(0.85px 0.85px at 84% 10%, rgba(210, 236, 255, 0.68), transparent 100%),
-    radial-gradient(0.7px 0.7px at 92% 23%, rgba(255, 255, 255, 0.62), transparent 100%);
-  animation: twinkleA 5.8s ease-in-out infinite;
-}
-
-body:not(.light) main::after {
-  background-image:
-    radial-gradient(0.65px 0.65px at 12% 28%, rgba(255, 255, 255, 0.58), transparent 100%),
-    radial-gradient(0.85px 0.85px at 24% 30%, rgba(255, 244, 210, 0.62), transparent 100%),
-    radial-gradient(0.65px 0.65px at 35% 26%, rgba(204, 232, 255, 0.58), transparent 100%),
-    radial-gradient(0.75px 0.75px at 48% 33%, rgba(255, 255, 255, 0.56), transparent 100%),
-    radial-gradient(0.6px 0.6px at 57% 27%, rgba(255, 255, 255, 0.5), transparent 100%),
-    radial-gradient(0.8px 0.8px at 69% 31%, rgba(255, 243, 210, 0.6), transparent 100%),
-    radial-gradient(0.65px 0.65px at 81% 28%, rgba(255, 255, 255, 0.56), transparent 100%),
-    radial-gradient(0.7px 0.7px at 91% 34%, rgba(206, 232, 255, 0.6), transparent 100%);
-  animation: twinkleB 7.2s ease-in-out infinite;
-}
 
 .flower-layer {
   position: fixed;
@@ -309,6 +168,63 @@ main,
   display: none;
 }
 
+/* Icon-only theme toggle (top-right). */
+.theme-switch {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  padding: 0;
+}
+
+.theme-switch:hover {
+  transform: translateY(-1px);
+}
+
+.theme-switch:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--primary) 55%, var(--border));
+  outline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible,
+.slide-control:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--primary) 55%, var(--border));
+  outline-offset: 3px;
+}
+
+.theme-switch-knob {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--primary) 85%, var(--surface-alt));
+  border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 220ms ease, background 220ms ease;
+}
+
+.theme-switch-icon {
+  font-size: 0.92rem;
+  line-height: 1;
+  transform: translateY(0.5px);
+}
+
+body.light .theme-switch-knob {
+  transform: translate(22px, -50%);
+  background: color-mix(in srgb, var(--primary-strong) 80%, var(--surface-alt));
+}
+
 .section {
   width: min(1100px, 90vw);
   margin: 3.9rem auto;
@@ -340,10 +256,61 @@ main,
 .hero-card,
 .stat-card,
 .project-card {
-  background: var(--card-solid);
-  border: 1px solid var(--border);
-  border-radius: 0.9rem;
-  padding: 1.05rem 1.2rem;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #fff 0px,
+      #fff 32px,
+      #e3e3e3 33px,
+      #fff 34px
+    );
+  border: 2px solid #d1cfc7;
+  border-radius: 1.2rem 1.2rem 1.2rem 1.2rem;
+  padding: 1.3rem 1.5rem 1.2rem 2.2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13), 0 1.5px 0 #b6b6b6 inset;
+  position: relative;
+  min-width: 260px;
+  max-width: 420px;
+  margin: 1.5rem auto;
+  /* Spiral binding */
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0.7rem;
+    top: 1.1rem;
+    width: 0.7rem;
+    height: calc(100% - 2.2rem);
+    background: repeating-linear-gradient(
+      to bottom,
+      #bbb 0px,
+      #bbb 7px,
+      transparent 7px,
+      transparent 32px
+    );
+    border-radius: 0.4rem;
+    z-index: 2;
+    box-shadow: 1px 0 2px #ccc;
+    pointer-events: none;
+  }
+  /* Spiral holes */
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0.3rem;
+    top: 1.1rem;
+    width: 0.18rem;
+    height: calc(100% - 2.2rem);
+    background: repeating-linear-gradient(
+      to bottom,
+      #222 0px,
+      #222 6px,
+      transparent 6px,
+      transparent 32px
+    );
+    border-radius: 0.2rem;
+    z-index: 3;
+    pointer-events: none;
+  }
 }
 
 .project-card {
@@ -395,8 +362,18 @@ main,
   aspect-ratio: 4 / 3;
   border-radius: 0.9rem;
   overflow: hidden;
-  background: color-mix(in srgb, var(--surface-alt) 88%, transparent);
-  box-shadow: var(--shadow-soft);
+  background:
+    radial-gradient(circle at 10% 12%, rgba(255, 255, 255, 0.08), transparent 45%),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(234, 246, 255, 0.06) 0px,
+      rgba(234, 246, 255, 0.06) 1px,
+      transparent 1px,
+      transparent 24px
+    ),
+    color-mix(in srgb, var(--surface-alt) 78%, transparent);
+  border: 2px dashed color-mix(in srgb, var(--border) 88%, transparent);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
 }
 
 .slide {
@@ -426,8 +403,10 @@ main,
   width: 38px;
   height: 38px;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  border: 2px dashed color-mix(in srgb, var(--border) 88%, transparent);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.08), transparent 45%),
+    color-mix(in srgb, var(--surface) 86%, transparent);
   color: var(--text);
   cursor: pointer;
   font-size: 1.1rem;
@@ -496,9 +475,12 @@ main,
 }
 
 .btn.primary {
-  background: linear-gradient(120deg, var(--primary), #f9c273);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.28), transparent 45%),
+    linear-gradient(120deg, var(--primary), #f9c273);
   color: var(--primary-text);
-  box-shadow: 0 8px 16px rgba(226, 166, 77, 0.24);
+  border: 2px dashed color-mix(in srgb, var(--primary) 35%, var(--border));
+  box-shadow: 0 10px 22px rgba(226, 166, 77, 0.2);
 }
 
 .btn.primary:hover {
@@ -507,8 +489,10 @@ main,
 }
 
 .btn.ghost {
-  background: color-mix(in srgb, var(--surface) 62%, transparent);
-  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.06), transparent 45%),
+    color-mix(in srgb, var(--surface) 62%, transparent);
+  border: 2px dashed color-mix(in srgb, var(--border) 82%, transparent);
   color: var(--text);
 }
 
@@ -571,9 +555,11 @@ h2 {
 
 .skill-chip {
   padding: 0.5rem 0.85rem;
-  background: color-mix(in srgb, var(--surface-alt) 85%, transparent);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.06), transparent 45%),
+    color-mix(in srgb, var(--surface-alt) 70%, transparent);
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 2px dashed color-mix(in srgb, var(--border) 82%, transparent);
   font-weight: 600;
 }
 
@@ -585,10 +571,20 @@ h2 {
 }
 
 .github-card {
-  background: var(--card-solid);
-  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.08), transparent 45%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 2px,
+      transparent 2px,
+      transparent 10px
+    ),
+    color-mix(in srgb, var(--surface-alt) 78%, transparent);
+  border: 2px dashed color-mix(in srgb, var(--border) 88%, transparent);
   border-radius: 1rem;
   padding: 0.8rem;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
 }
 
 .project-findings-list {
@@ -773,9 +769,19 @@ h2 {
   width: 100%;
   margin: 1.2rem 0 0;
   padding: 0.45rem 0.9rem 0.6rem;
-  border: 1px solid var(--border);
+  border: 2px dashed color-mix(in srgb, var(--border) 88%, transparent);
   border-radius: 0;
-  background: var(--card-solid);
+  background:
+    radial-gradient(circle at 10% 12%, rgba(255, 255, 255, 0.08), transparent 45%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 2px,
+      transparent 2px,
+      transparent 10px
+    ),
+    color-mix(in srgb, var(--surface-alt) 78%, transparent);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
   text-align: center;
 }
 
@@ -821,10 +827,20 @@ h2 {
 
 .cv-preview-wrap {
   margin-top: 1rem;
-  border: 1px solid var(--border);
+  border: 2px dashed color-mix(in srgb, var(--border) 88%, transparent);
   border-radius: 0.75rem;
   overflow: hidden;
-  background: color-mix(in srgb, var(--surface-alt) 76%, transparent);
+  background:
+    radial-gradient(circle at 10% 12%, rgba(255, 255, 255, 0.08), transparent 45%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 2px,
+      transparent 2px,
+      transparent 10px
+    ),
+    color-mix(in srgb, var(--surface-alt) 78%, transparent);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
 }
 
 .cv-preview-wrap iframe {
@@ -912,8 +928,10 @@ h2 {
 }
 
 .filter-btn {
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  border: 2px dashed color-mix(in srgb, var(--border) 82%, transparent);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.06), transparent 45%),
+    color-mix(in srgb, var(--surface) 70%, transparent);
   color: var(--text);
   border-radius: 999px;
   padding: 0.4rem 0.8rem;
@@ -921,7 +939,9 @@ h2 {
 }
 
 .filter-btn.active {
-  background: linear-gradient(120deg, var(--primary), #ffd27d);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.22), transparent 45%),
+    linear-gradient(120deg, var(--primary), #ffd27d);
   color: var(--primary-text);
   border-color: transparent;
 }
@@ -940,11 +960,30 @@ h2 {
 }
 
 .project-tags span {
-  background: color-mix(in srgb, var(--surface-alt) 85%, transparent);
-  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.06), transparent 45%),
+    color-mix(in srgb, var(--surface-alt) 70%, transparent);
+  border: 2px dashed color-mix(in srgb, var(--border) 82%, transparent);
   padding: 0.2rem 0.5rem;
   border-radius: 999px;
   font-size: 0.8rem;
+}
+
+.stack-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.45rem;
+}
+
+.stack-label {
+  margin: 0;
+  min-width: 110px;
+  padding-top: 0.2rem;
+}
+
+.stack-tags {
+  margin-bottom: 0;
 }
 
 .project-subheading {
@@ -957,11 +996,15 @@ h2 {
   height: 0;
   padding-top: 56.25%;
   padding-bottom: 0;
-  box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
   margin-top: 0.2em;
   margin-bottom: 0.9em;
   overflow: hidden;
   border-radius: 8px;
+  border: 2px dashed color-mix(in srgb, var(--border) 88%, transparent);
+  background:
+    radial-gradient(circle at 10% 12%, rgba(255, 255, 255, 0.08), transparent 45%),
+    color-mix(in srgb, var(--surface-alt) 78%, transparent);
   will-change: transform;
 }
 

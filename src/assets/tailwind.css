@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+body {
+  @apply bg-cream-paper font-sans text-espresso min-h-screen;
+  background-image: url('/assets/images/paper-texture.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  letter-spacing: 0.01em;
+}
+
+.font-handwritten {
+  font-family: 'Caveat', 'Gaegu', cursive;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
