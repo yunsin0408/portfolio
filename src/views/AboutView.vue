@@ -116,7 +116,7 @@ const flipNext = () => {
                 <WashiTape position="top" rotation="-rotate-3" class="absolute -top-3 left-[20%] opacity-80 filter sepia-[0.3] hue-rotate-45" />
                 <h3 class="font-caveat text-3xl text-[#5c6d85] font-bold mb-1">{{ item.role }}</h3>
                 <h4 class="font-sans text-[11px] sm:text-xs font-bold text-[#8ba2bd] uppercase tracking-widest mb-3 border-b border-blue-50 pb-1 inline-block">{{ item.company }}</h4>
-                <p v-if="item.description" class="font-sans text-stone-500 font-medium leading-relaxed text-xs sm:text-sm">{{ item.description }}</p>
+                <p v-if="item.description" class="font-sans text-stone-500 font-medium leading-relaxed text-xs sm:text-sm text-justify">{{ item.description }}</p>
               </div>
 
               <!-- POSTCARD TYPE -->
@@ -127,7 +127,7 @@ const flipNext = () => {
                 </div>
                 <h3 class="font-caveat text-3xl text-[#6b625b] font-bold mb-1 w-4/5 leading-tight">{{ item.role }}</h3>
                 <h4 class="font-sans text-[11px] sm:text-xs font-bold text-stone-400 uppercase tracking-[0.2em] mb-4 mt-1 bg-linear-to-r from-orange-50/50 to-transparent pr-4 pt-1">{{ item.company }}</h4>
-                <p v-if="item.description" class="font-sans text-stone-500 leading-relaxed text-xs sm:text-sm w-5/6">{{ item.description }}</p>
+                <p v-if="item.description" class="font-sans text-stone-500 leading-relaxed text-xs sm:text-sm w-5/6 text-justify">{{ item.description }}</p>
               </div>
 
               <!-- WASHI STRIP TYPE  -->
@@ -146,14 +146,24 @@ const flipNext = () => {
                 <!-- Pink margin line -->
                 <div class="absolute left-[2.8rem] top-0 bottom-0 w-[1.5px] bg-rose-300/60"></div>
                 <!-- Logo for Washi Note -->
-                <div v-if="item.logoSrc" class="absolute top-9 right-4 w-24 h-12 flex items-center justify-center overflow-hidden">
+                <div
+                  v-if="item.logoSrc && item.company !== 'Acer'"
+                  class="absolute flex items-center justify-center overflow-hidden"
+                  :class="'top-9 right-4 w-24 h-12'"
+                >
                   <img :src="item.logoSrc" :alt="`${item.company} logo`" class="w-full h-full object-contain p-1" />
                 </div>
                 <WashiTape position="left" rotation="-rotate-4" class="absolute -top-2 -left-4 z-20 mix-blend-multiply filter opacity-150 sepia-[0.2] hue-rotate-110" width="80px" />
-                <div class="pl-10 relative z-10" :class="item.company === 'Acer' ? 'pt-4' : ''">
-                  <h3 class="font-caveat text-2xl sm:text-3xl text-stone-600 font-bold mb-1 w-4/5">{{ item.role }}</h3>
+                <div class="pl-10 relative z-10" :class="item.company === 'Acer' ? 'pt-2' : ''">
+                  <div v-if="item.company === 'Acer'" class="flex items-start justify-between gap-3 mb-1">
+                    <h3 class="font-caveat text-2xl sm:text-3xl text-stone-600 font-bold leading-tight flex-1 min-w-0 whitespace-normal break-words">{{ item.role }}</h3>
+                    <div v-if="item.logoSrc" class="w-20 h-10 sm:w-28 sm:h-14 flex items-center justify-center shrink-0 overflow-hidden">
+                      <img :src="item.logoSrc" :alt="`${item.company} logo`" class="w-full h-full object-contain p-1" />
+                    </div>
+                  </div>
+                  <h3 v-else class="font-caveat text-2xl sm:text-3xl text-stone-600 font-bold mb-1 w-4/5">{{ item.role }}</h3>
                   <h4 class="font-sans text-[11px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">{{ item.company }}</h4>
-                  <p v-if="item.description" class="font-sans text-stone-500 font-medium leading-snug text-xs sm:text-sm w-11/12">{{ item.description }}</p>
+                  <p v-if="item.description" class="font-sans text-stone-500 font-medium leading-snug text-xs sm:text-sm text-justify" :class="item.company === 'Acer' ? 'w-full' : 'w-11/12'">{{ item.description }}</p>
                 </div>
               </div>
 
