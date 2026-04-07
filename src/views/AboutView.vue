@@ -94,7 +94,7 @@ const flipNext = () => {
         />
       </svg>
         <!-- Mobile Left-bound Spine -->
-        <svg class="absolute top-0 bottom-0 left-8 w-3 z-30 md:hidden" preserveAspectRatio="none" aria-hidden="true">
+        <svg class="absolute top-0 bottom-0 left-8 w-3 z-30 hidden md:hidden" preserveAspectRatio="none" aria-hidden="true">
             <path d="M 1.5 0 V 60 C 1.5 80, -1.5 100, 1.5 120 C 1.5 140, 4.5 160, 1.5 180 V 240 C 1.5 260, -1.5 280, 1.5 300 C 1.5 320, 4.5 340, 1.5 360 V 420 C 1.5 440, -1.5 460, 1.5 480 C 1.5 500, 4.5 520, 1.5 540 V 600 C 1.5 620, -1.5 640, 1.5 660 C 1.5 680, 4.5 700, 1.5 720 V 780 C 1.5 800, -1.5 820, 1.5 840 C 1.5 860, 4.5 880, 1.5 900 V 10000" stroke="#6b625b" stroke-width="3" stroke-linecap="round" fill="none"></path>
         </svg>
 
@@ -103,35 +103,38 @@ const flipNext = () => {
           <div v-for="(item, index) in aboutData.roadmap" :key="item.id" class="w-full relative flex flex-col md:flex-row items-center md:justify-between group gap-6 md:gap-0" :class="index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'">
             
             <!-- Nodes & Stamps -->
-            <div class="flex items-center md:hidden pl-2">
+            <div class="flex items-center md:hidden pl-2 relative w-full">
               <div class="w-1/2 h-1/2 rounded-full bg-rose-700 border-2 border-[#fff7f5] shadow-sm z-10 mr-4 relative left-2" :class="index % 2===0 ? 'rotate-3':'-rotate-6'"></div>
-              <DateTape :date="item.date" :rotation="item.rotation || (index % 2 === 0 ? 'rotate-3' : '-rotate-3')" class="opacity-90" />
+              <DateTape :date="item.date" :rotation="item.rotation || (index % 2 === 0 ? 'rotate-3' : '-rotate-3')" class="opacity-90 absolute -left-1 -top-2 z-50" />
             </div>
 
             <!-- Content Card Side -->
             <div class="w-[90%] md:w-[45%] flex transition-all duration-500 hover:-translate-y-1 hover:scale-[1.01] cursor-default z-20" :class="index % 2 === 0 ? 'md:justify-end pr-0 md:pr-4' : 'md:justify-start pl-0 md:pl-4'">
               
               <!-- TORN PAPER TYPE -->
-              <div v-if="item.type === 'torn-paper'" class="w-full max-w-100 p-5 sm:p-6 shadow-sm rotate-4 relative border border-stone-100" style="clip-path: polygon(0% 0%, 100% 2%, 98% 100%, 2% 98%); border-radius: 2px; background-color: #e0f2fe; background-image: repeating-linear-gradient(transparent, transparent 23px, rgba(255,255,255,0.7) 23px, rgba(255,255,255,0.7) 24px); background-size: 100% 24px;">
-                <WashiTape position="top" rotation="-rotate-3" class="absolute -top-3 left-[20%] opacity-80 filter sepia-[0.3] hue-rotate-45" />
-                <h3 class="font-caveat text-3xl text-[#5c6d85] font-bold mb-1">{{ item.role }}</h3>
-                <h4 class="font-sans text-[11px] sm:text-xs font-bold text-[#8ba2bd] uppercase tracking-widest mb-3 border-b border-blue-50 pb-1 inline-block">{{ item.company }}</h4>
-                <p v-if="item.description" class="font-sans text-stone-500 font-medium leading-relaxed text-xs sm:text-sm text-justify">{{ item.description }}</p>
+              <div v-if="item.type === 'torn-paper'" class="w-full max-w-100 relative rotate-4">
+                <WashiTape position="top" rotation="rotate-2" class="absolute -top-2 left-[20%] opacity-150 mix-blend-multiply filter sepia-[0.2] hue-rotate-30 z-50 pointer-events-none" />
+                <div class="w-full p-5 sm:p-6 shadow-sm relative border border-stone-100" style="clip-path: polygon(0% 0%, 100% 2%, 98% 100%, 2% 98%); background-color: #e0f2fe; background-image: repeating-linear-gradient(transparent, transparent 23px, rgba(255,255,255,0.7) 23px, rgba(255,255,255,0.7) 24px); background-size: 100% 24px;">
+                  <h3 class="font-caveat text-2xl sm:text-3xl text-[#5c6d85] font-bold mb-1 mt-3">{{ item.role }}</h3>
+                  <h4 class="font-sans text-[11px] sm:text-xs font-bold text-[#8ba2bd] uppercase tracking-widest mb-3 border-b border-blue-50 pb-1 inline-block">{{ item.company }}</h4>
+                  <p v-if="item.description" class="font-sans text-stone-500 font-medium leading-relaxed text-xs sm:text-sm text-justify">{{ item.description }}</p>
+                </div>
               </div>
 
               <!-- POSTCARD TYPE -->
               <div v-else-if="item.type === 'postcard'" class="w-full max-w-100 bg-[#f7f9fa] p-5 sm:p-6 shadow-[2px_6px_15px_rgba(200,195,185,0.2)] border border-[#f0efec] relative transform rotate-1">
                 <!-- logo-->
-                <div v-if="item.logoSrc" class="absolute top-4 right-2 w-32 h-20 flex items-center justify-center overflow-hidden">
+                <div v-if="item.logoSrc" class="absolute top-4 right-2 sm:right-3 w-24 h-14 sm:w-32 sm:h-20 flex items-center justify-center overflow-hidden">
                   <img :src="item.logoSrc" :alt="`${item.company} logo`" class="w-full h-full object-contain p-1" />
                 </div>
-                <h3 class="font-caveat text-3xl text-[#6b625b] font-bold mb-1 w-4/5 leading-tight">{{ item.role }}</h3>
+                <WashiTape position="top" rotation="rotate-2" color="bg-blue-200" class="absolute -top-3 left-[20%] opacity-90 mix-blend-multiply filter sepia-[0.2] hue-rotate-30 z-10 pointer-events-none" />
+                <h3 class="font-caveat text-2xl sm:text-3xl text-[#6b625b] font-bold mb-1 w-4/5 leading-tight flex-1 min-w-0 whitespace-normal break-words">{{ item.role }}</h3>
                 <h4 class="font-sans text-[11px] sm:text-xs font-bold text-stone-400 uppercase tracking-[0.2em] mb-4 mt-1 bg-linear-to-r from-orange-50/50 to-transparent pr-4 pt-1">{{ item.company }}</h4>
                 <p v-if="item.description" class="font-sans text-stone-500 leading-relaxed text-xs sm:text-sm w-5/6 text-justify">{{ item.description }}</p>
               </div>
 
               <!-- WASHI STRIP TYPE  -->
-              <div v-else class="w-full h-56 max-w-125 p-6 sm:p-5 shadow-md relative -rotate-1" style="
+              <div v-else :class="['w-full max-w-125 p-6 sm:p-5 shadow-md relative -rotate-1', item.company === 'Acer' ? 'h-72 md:h-60' : 'h-56 md:h-48']" style="
                 background-color: #FEF9C3;
                 background-image:
                   repeating-linear-gradient(
@@ -149,11 +152,11 @@ const flipNext = () => {
                 <div
                   v-if="item.logoSrc && item.company !== 'Acer'"
                   class="absolute flex items-center justify-center overflow-hidden"
-                  :class="'top-9 right-4 w-24 h-12'"
+                  :class="'top-9 right-2 sm:right-4 w-24 h-12'"
                 >
                   <img :src="item.logoSrc" :alt="`${item.company} logo`" class="w-full h-full object-contain p-1" />
                 </div>
-                <WashiTape position="left" rotation="-rotate-4" class="absolute -top-2 -left-4 z-20 mix-blend-multiply filter opacity-150 sepia-[0.2] hue-rotate-110" width="80px" />
+                <WashiTape position="left" rotation="-rotate-4" color="bg-lime-300" class="absolute -top-2 -left-4 z-20 mix-blend-multiply filter opacity-50 sepia-[0.2] hue-rotate-110" width="80px" />
                 <div class="pl-10 relative z-10" :class="item.company === 'Acer' ? 'pt-2' : ''">
                   <div v-if="item.company === 'Acer'" class="flex items-start justify-between gap-3 mb-1">
                     <h3 class="font-caveat text-2xl sm:text-3xl text-stone-600 font-bold leading-tight flex-1 min-w-0 whitespace-normal break-words">{{ item.role }}</h3>
@@ -162,7 +165,7 @@ const flipNext = () => {
                     </div>
                   </div>
                   <h3 v-else class="font-caveat text-2xl sm:text-3xl text-stone-600 font-bold mb-1 w-4/5">{{ item.role }}</h3>
-                  <h4 class="font-sans text-[11px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">{{ item.company }}</h4>
+                  <h4 class="font-sans text-[10px] sm:text-xs font-bold text-stone-400 uppercase tracking-[0.15em] mb-2 whitespace-nowrap">{{ item.company }}</h4>
                   <p v-if="item.description" class="font-sans text-stone-500 font-medium leading-snug text-xs sm:text-sm text-justify" :class="item.company === 'Acer' ? 'w-full' : 'w-11/12'">{{ item.description }}</p>
                 </div>
               </div>

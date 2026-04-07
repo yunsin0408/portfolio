@@ -2,8 +2,8 @@
   <div class="relative w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-12 lg:gap-16 bg-cream-paper p-6 sm:p-10 lg:p-12 shadow-note rounded-sm border border-gray-100 transform -rotate-1 items-center mt-8 z-20">
     
     <!-- Physical Scrapbook Anchors -->
-    <WashiTape position="top-left" rotation="-rotate-3" width="130px" class="-top-5 -left-8" />
-    <WashiTape position="bottom-right" rotation="rotate-2" width="110px" class="-bottom-5 -right-6 opacity-80" />
+    <WashiTape position="top-left" rotation="-rotate-3" width="130px" class="-top-5 -left-8" hidden sm:block/>
+    <WashiTape position="bottom-right" rotation="rotate-2" width="110px" class="-bottom-5 -right-6 opacity-80"hidden sm:block />
 
     <!-- Musical Elements & Floating SVGs -->
     

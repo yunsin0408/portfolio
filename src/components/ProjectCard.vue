@@ -13,7 +13,7 @@
     ]"
   >
     <!-- Jewel Case Container -->
-    <div class="w-full h-full bg-[#e5e5e5] border border-gray-400 rounded-[2px] flex relative overflow-hidden">
+    <div class="w-full h-full bg-[#e5e5e5] border border-gray-400 rounded-[2px] flex relative overflow-visible">
       
       <!-- Spine -->
       <div class="w-6 sm:w-8 h-full bg-stone-900 flex-shrink-0 border-r border-stone-500 flex items-center justify-center overflow-hidden shadow-[inset_-2px_0_4px_rgba(0,0,0,0.4)] z-10">
@@ -65,7 +65,6 @@
 
     </div>
 
-    <!-- The "Sticker" System -->
     <!-- Ongoing Sticker -->
     <div v-if="status === 'Ongoing'" class="absolute -top-4 -right-4 z-30 transform rotate-3 group-hover:rotate-6 transition-all duration-300 pointer-events-none">
   <div class="relative px-5 py-2 bg-[#fdfbf7] border-[3px] border-[#1e3a8a] rounded-[55%_45%_52%_48%_/_45%_52%_48%_55%] shadow-[0_0_0_2px_#fdfbf7,3px_4px_0px_rgba(30,58,138,0.3)] 

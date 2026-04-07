@@ -39,7 +39,7 @@ const getScatterClass = (index) => {
       <!-- Mobile -->
       <div class="sm:hidden text-center py-4 px-6 bg-[#e8d5b0]/70 shadow-sm backdrop-blur-sm border-y border-amber-800/20 rounded-sm">
         <h1 class="font-serif text-4xl text-amber-900 font-bold mb-1">Record Store</h1>
-        <p class="text-[10px] text-amber-800/60 font-bold tracking-widest uppercase">Hover cases to slide open</p>
+        <p class="text-[10px] text-amber-800/60 font-bold tracking-widest uppercase">Click on the jewel cases for more details!</p>
       </div>
     </div>
 

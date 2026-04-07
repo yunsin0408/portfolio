@@ -39,7 +39,7 @@
           :class="{ 'pointer-events-none': !isFlipped }"
           @click="flipToFront"
         >
-          <section class="ticket-main px-8 md:px-10 py-4 md:py-4 min-w-0">
+          <section class="ticket-main ticket-main-back px-8 md:px-10 py-4 md:py-4 min-w-0">
             <p class="ticket-genre text-stone-500 font-serif font-bold text-lg uppercase">{{ item.role }}</p>
             <h2 class="ticket-title text-[#0b0c35] font-serif font-bold uppercase tracking-widest text-xl mt-1">{{ item.name }}</h2>
             <p class="ticket-desc text-stone-600 font-serif tracking-tighter text-[15px] md:text-sm leading-relaxed text-justify mt-2">{{ item.description || item.summary }}</p>
@@ -210,6 +210,7 @@ function goToPhoto(index) {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  min-height: 0;
 }
 
 .ticket-main-simple {
@@ -384,6 +385,16 @@ function goToPhoto(index) {
 }
 
 @media (max-width: 767px) {
+  .ticket-layout-back {
+    --mobile-image-height: clamp(8.5rem, 42vw, 11.5rem);
+    --mobile-text-height: calc(var(--mobile-image-height) * 2);
+  }
+
+  .ticket-layout-back .ticket-main-back {
+    max-height: var(--mobile-text-height);
+    overflow-y: auto;
+  }
+
   .ticket-title {
     font-size: 1rem;
   }
@@ -409,20 +420,29 @@ function goToPhoto(index) {
 
   .film-strip-scroll {
     overflow: hidden;
+    height: var(--mobile-image-height);
+    aspect-ratio: auto;
   }
 
   .film-strip-track {
-    flex-direction: row;
-    animation: film-scroll-x 30s linear infinite;
+    flex-direction: column;
+    gap: 0;
+    animation: film-scroll-y 40s linear infinite;
   }
 
   .film-frame {
-    width: 8.6rem;
+    width: 100%;
+    border-radius: 0;
+    background: #3a2d20;
+    padding: 0.24rem;
+    box-shadow: none;
   }
 
   .film-image {
     aspect-ratio: 4 / 3;
     height: auto;
+    border-radius: 0.2rem;
+    background: rgba(247, 237, 219, 0.9);
   }
 }
 
@@ -431,7 +451,6 @@ function goToPhoto(index) {
     width: min(100%, 76rem);
     aspect-ratio: 3 / 1;
     min-height: 250px;
-    max-height: 340px;
   }
 
   .ticket-layout-front {

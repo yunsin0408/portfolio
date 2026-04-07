@@ -77,7 +77,7 @@ const formatVideoUrl = (url) => {
 
         <!-- spinning CD -->
         <div
-          class="relative shrink-0 w-[160px] h-[160px] sm:w-[220px] sm:h-[220px] mt-4 sm:mt-6 transition-all duration-700"
+          class="hidden sm:block relative shrink-0 w-[160px] h-[160px] sm:w-[220px] sm:h-[220px] mt-4 sm:mt-6 transition-all duration-700"
           :class="caseOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-75'"
         >
           <!-- Disc body -->
@@ -89,6 +89,16 @@ const formatVideoUrl = (url) => {
           class="relative ml-0 sm:ml-4 flex-1 max-w-2xl h-[calc(100vh-5rem)]"
           :class="inlayOut ? 'inlay-open' : 'inlay-closed'"
         >
+          <button
+            @click="close"
+            class="sm:hidden absolute top-15 right-4 z-50 inline-flex items-center justify-center w-10 h-10 rounded-md border border-stone-700 bg-[#f8f3ea] text-stone-800 shadow-[2px_2px_0_rgba(0,0,0,0.25)] active:translate-y-[1px] active:shadow-[1px_1px_0_rgba(0,0,0,0.25)]"
+            aria-label="Close project"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 7L5 11l4 4"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 11h7a5 5 0 010 10h-2"></path>
+            </svg>
+          </button>
           
           <!-- Staples -->
           <div class="relative flex top-4 items-center gap-3 px-4 py-1 pt-0 pb-2 bg-[#e8e4dc] border-b border-stone-300 shrink-0">
@@ -192,7 +202,7 @@ const formatVideoUrl = (url) => {
             <div v-if="project.outcome" class="px-6 sm:px-10 py-3 fold-crease">
               <h2 class="font-mono text-[10px] font-black uppercase tracking-[0.3em] text-stone-400 py-2">— - Findings - —</h2>
               <div class="relative bg-[#ebebda] mb-2 border border-stone-200 shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-6 -rotate-[0.5deg]">
-                <WashiTape color="bg-lime-700" position="top-left" rotation="-rotate-15" width="72px" class="-left-3 -top-3 opacity-35 mt-1 mr-2" />
+                <WashiTape color="bg-lime-700" position="top-left" rotation="-rotate-15" width="72px" class="hidden sm:block -left-3 -top-3 opacity-35 mt-1 mr-2" />
                 <p v-if="typeof project.outcome === 'string'" class="font-sans text-sm text-stone-700 leading-relaxed">{{ project.outcome }}</p>
                 <div v-else-if="Array.isArray(project.outcome)">
                   <h3 v-if="project.outcome.find(item => item.heading)" class="font-['Lora',serif] text-lg font-bold text-stone-700 mb-4">

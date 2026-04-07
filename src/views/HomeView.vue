@@ -4,7 +4,6 @@ import StickyNote from "../components/StickyNote.vue";
 import WashiTape from "../components/WashiTape.vue";
 import GitHubStats from "../components/GitHubStats.vue";
 import NowPlayingGallery from "../components/NowPlayingGallery.vue";
-import PaperClip from "../components/PaperClip.vue";
 import CDInlayOverlay from "../components/CDInlayOverlay.vue";
 import { projectsData } from "../data/projects";
 import { imageUrl } from "../utils/imageUrl";
@@ -46,8 +45,8 @@ const publications = [
         <WashiTape position="top-left" rotation="-rotate-6" width="100px" class="-left-4 -top-3" />
         <WashiTape position="bottom-right" rotation="rotate-3" width="90px" class="-right-4 -bottom-3 opacity-80" />
         
-        <p class="font-handwritten text-sunset-pink text-3xl mb-3 decorator-line inline-block">Hi! I'm Cindy (@yunsin0408)</p>
-        <h1 class="font-sans text-4xl md:text-4xl font-black text-espresso leading-tight tracking-tight mb-3 mt-2">
+        <p class="font-handwritten text-sunset-pink text-2xl mb-2 decorator-line inline-block">Hi! I'm Cindy (@yunsin0408)</p>
+        <h1 class="font-sans text-3xl md:text-4xl font-black text-espresso leading-tight tracking-tight mb-3 mt-2">
           Building Innovative AI Solutions for Social Sustainability 🌎 🌱
         </h1>
         <p class="font-handwritten text-xl md:text-2xl text-gray-700 leading-relaxed">
@@ -61,7 +60,7 @@ const publications = [
         <img
           :src="imageUrl('lemon_hk.png')"
           alt=""
-          class="pointer-events-none select-none absolute -top-13 -right-12 w-25 md:w-32 rotate-10 drop-shadow-md"
+          class="pointer-events-none select-none absolute -top-12 -right-3 md:-right-10 w-25 md:w-35 rotate-10 drop-shadow-md"
         />
         <WashiTape position="top" rotation="-rotate-3" width="120px" />
         <img :src="imageUrl('me.jpeg')" alt="Cindy snapshot" class="w-full aspect-5/4 object-cover object-[center_80%] border border-gray-100 bg-gray-50" />
@@ -115,10 +114,6 @@ const publications = [
   custom-width="w-full max-w-xl md:max-w-2xl" 
   class="mb-5 z-500 min-h-75 transform hover:scale-105 transition-transform "
 >
-  <template #decorations>
-    <PaperClip position="top-right" rotation="rotate-12" class="-right-6 -top-10" />
-  </template>            
-  
   <p class="font-handwriting text-xl text-espresso leading-snug mb-7">
     {{ insightsText }}
   </p>
