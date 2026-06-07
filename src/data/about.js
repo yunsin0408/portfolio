@@ -16,9 +16,9 @@ export const aboutData = {
       id: 1,
       role: "Multi-cloud GenAI Security Research & Development Intern",
       company: "Deloitte",
-      date: "Feb. 2025 - Present",
+      date: "Feb. 2026 - Jun. 2026",
       type: "postcard",
-      description: "Designing and prototyping a multi-cloud AI governance and risk assessment framework across Azure, AWS and GCP.",
+      description: "Designed and developed an AI-driven multi-cloud (AWS, GCP, Azure) risk assessment platform to streamline cloud security reviews for engineering teams.",
       icon: "grad-cap",
       rotation: "rotate-2",
       logoSrc: imageUrl("deloitte-logo.png")
