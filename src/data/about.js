@@ -14,6 +14,17 @@ export const aboutData = {
   roadmap: [
     {
       id: 1,
+      role: "Surface PM Intern",
+      company: "Microsoft",
+      date: "Jul. 2026 - Present",
+      type: "washi-note",
+      description: "Directing new Surface products from development to mass production.",
+      icon: "server",
+      rotation: "rotate-1",
+      logoSrc: imageUrl("microsoft-logo.png")
+    },
+    {
+      id: 2,
       role: "Multi-cloud GenAI Security Research & Development Intern",
       company: "Deloitte",
       date: "Feb. 2026 - Jun. 2026",
@@ -24,7 +35,7 @@ export const aboutData = {
       logoSrc: imageUrl("deloitte-logo.png")
     },
     {
-      id: 2,
+      id: 3,
       role: "Research Assistant",
       company: "Intelligent Agents & Applications Lab @NCCU (Advisor: Prof. Hsin-Tse Lu)",
       date: "Sep. 2024 - Present",
@@ -34,7 +45,7 @@ export const aboutData = {
       rotation: "-rotate-1"
     },
     {
-      id: 3,
+      id: 4,
       role: "AI Data Generation Intern",
       company: "Acer",
       date: "Jul. 2025 - Aug. 2025",

@@ -1,8 +1,8 @@
 <script setup>
 import { computed, ref } from "vue";
 
-const cvLastUpdated = ref("June 9th 2026");
-const cvDriveShareUrl = "https://drive.google.com/file/d/1g_NKUZrMCeizcD_T7uOKZrGXS1UgWn3f/view?usp=sharing";
+const cvLastUpdated = ref("July 8th 2026");
+const cvDriveShareUrl = "https://drive.google.com/file/d/1ODJ-ZGWzoMCS9H4mIZiJfA56b_gYkPVq/view?usp=sharing";
 
 const cvDriveFileId = computed(() => {
   const match = cvDriveShareUrl.match(/\/file\/d\/([^/]+)/);
