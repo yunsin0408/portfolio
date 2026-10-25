@@ -50,8 +50,8 @@ const publications = [
           Building Innovative AI Solutions for Social Sustainability 🌎 🌱
         </h1>
         <p class="font-handwritten text-xl md:text-2xl text-gray-700 leading-relaxed">
-          I'm a third-year undergraduate passionate about data science, 
-          Generative AI, and sustainable development.
+          I'm a fourth-year undergraduate passionate about data science, 
+          Generative AI, and machine learning.
         </p>
       </div>
 
